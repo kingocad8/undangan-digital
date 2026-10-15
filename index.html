@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raka &amp; Sinta — Undangan Pernikahan</title>
+<meta name="description" content="Undangan Pernikahan Raka & Sinta — Sabtu, 19 Desember 2026">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════ COVER ═══════════════ -->
+<div class="cover" id="cover">
+  <div class="cover-dalam">
+    <p class="cover-label">Undangan Pernikahan</p>
+    <h1 class="cover-nama">Raka<br><span class="dan">&amp;</span>Sinta</h1>
+    <p class="cover-tanggal">Sabtu, 19 Desember 2026</p>
+    <div class="cover-tamu">
+      <p>Kepada Yth.<br>Bapak/Ibu/Saudara/i</p>
+      <p class="nama-tamu">Tamu Undangan</p>
+    </div>
+    <button class="btn" id="btn-buka">&#10022; Buka Undangan</button>
+  </div>
+</div>
+
+<main id="konten">
+
+  <!-- ═══════════════ PEMBUKA ═══════════════ -->
+  <section class="bagian pembuka">
+    <p class="label-emas">Assalamu&rsquo;alaikum Wr. Wb.</p>
+    <p class="teks">Dengan memohon rahmat dan ridha Allah SWT, kami bermaksud menyempurnakan separuh agama kami dalam ikatan suci pernikahan.</p>
+  </section>
+
+  <!-- ═══════════════ MEMPELAI ═══════════════ -->
+  <section class="bagian">
+    <h2 class="judul-bagian">Mempelai</h2>
+    <div class="kartu-mempelai">
+      <div class="foto"><img src="images/pria.jpg" alt="Foto mempelai pria"></div>
+      <h3>Raka Pratama, S.T.</h3>
+      <p>Putra dari Bapak H. Bambang Sutrisno<br>&amp; Ibu Hj. Ratna Dewi</p>
+    </div>
+    <div class="dan-besar">&amp;</div>
+    <div class="kartu-mempelai">
+      <div class="foto"><img src="images/wanita.jpg" alt="Foto mempelai wanita"></div>
+      <h3>Sinta Maharani, S.E.</h3>
+      <p>Putri dari Bapak H. Agus Wijaya<br>&amp; Ibu Hj. Maya Putri</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ HITUNG MUNDUR ═══════════════ -->
+  <section class="bagian bagian-gelap">
+    <h2 class="judul-bagian">Menuju Hari Bahagia</h2>
+    <p class="tanggal-besar">Sabtu, 19 Desember 2026</p>
+    <div class="countdown">
+      <div><span id="cd-hari">0</span><small>Hari</small></div>
+      <div><span id="cd-jam">0</span><small>Jam</small></div>
+      <div><span id="cd-menit">0</span><small>Menit</small></div>
+      <div><span id="cd-detik">0</span><small>Detik</small></div>
+    </div>
+    <a class="btn btn-garis" target="_blank" rel="noopener"
+       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Raka+%26+Sinta&dates=20261219T010000Z/20261219T100000Z&details=Akad+nikah+%26+resepsi+pernikahan+Raka+%26+Sinta">Simpan Tanggal</a>
+  </section>
+
+  <!-- ═══════════════ ACARA ═══════════════ -->
+  <section class="bagian">
+    <h2 class="judul-bagian">Rangkaian Acara</h2>
+    <div class="kartu-acara">
+      <h3>Akad Nikah</h3>
+      <p class="waktu">08.00 &mdash; 10.00 WIB</p>
+      <p>Gedung Serbaguna Batu Aji<br>Jl. Raya Batu Aji No. 123, Batam</p>
+    </div>
+    <div class="kartu-acara">
+      <h3>Resepsi</h3>
+      <p class="waktu">11.00 &mdash; 13.00 WIB</p>
+      <p>Gedung Serbaguna Batu Aji<br>Jl. Raya Batu Aji No. 123, Batam</p>
+    </div>
+    <a class="btn" target="_blank" rel="noopener" href="https://maps.google.com/?q=Batu+Aji,+Batam">Lihat Google Maps</a>
+  </section>
+
+  <!-- ═══════════════ GALERI ═══════════════ -->
+  <section class="bagian">
+    <h2 class="judul-bagian">Galeri</h2>
+    <div class="grid-galeri">
+      <img src="images/galeri-1.jpg" alt="Cincin pernikahan" loading="lazy">
+      <img src="images/galeri-2.jpg" alt="Buket bunga" loading="lazy">
+      <img src="images/galeri-3.jpg" alt="Tangan kedua mempelai" loading="lazy">
+      <img src="images/galeri-4.jpg" alt="Dekorasi meja resepsi" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ═══════════════ RSVP ═══════════════ -->
+  <section class="bagian bagian-gelap">
+    <h2 class="judul-bagian">Konfirmasi Kehadiran</h2>
+    <p class="teks">Mohon konfirmasi kehadiran Bapak/Ibu/Saudara/i melalui formulir berikut.</p>
+    <form id="form-rsvp">
+      <input type="text" name="nama" placeholder="Nama lengkap" required>
+      <select name="kehadiran">
+        <option value="Hadir, insyaAllah">Hadir, insyaAllah</option>
+        <option value="Berhalangan hadir">Berhalangan hadir</option>
+      </select>
+      <input type="number" name="jumlah" min="1" max="5" value="1" title="Jumlah tamu">
+      <textarea name="ucapan" rows="3" placeholder="Tulis ucapan &amp; doa untuk kedua mempelai..."></textarea>
+      <button class="btn" type="submit">Kirim via WhatsApp</button>
+    </form>
+  </section>
+
+  <!-- ═══════════════ AMPLOP DIGITAL ═══════════════ -->
+  <section class="bagian">
+    <h2 class="judul-bagian">Tanda Kasih</h2>
+    <p class="teks">Doa restu Bapak/Ibu/Saudara/i merupakan hadiah terindah bagi kami. Namun apabila berkenan memberi tanda kasih, kami sediakan dengan penuh terima kasih.</p>
+    <div class="kartu-rek">
+      <p><strong>BCA</strong><br><span class="norek">123 456 7890</span><br>a.n. Raka Pratama</p>
+      <button class="btn btn-kecil" data-copy="1234567890">Salin Nomor</button>
+    </div>
+    <div class="kartu-rek">
+      <p><strong>DANA</strong><br><span class="norek">0812 3456 7890</span><br>a.n. Sinta Maharani</p>
+      <button class="btn btn-kecil" data-copy="081234567890">Salin Nomor</button>
+    </div>
+  </section>
+
+  <!-- ═══════════════ UCAPAN ═══════════════ -->
+  <section class="bagian bagian-gelap">
+    <h2 class="judul-bagian">Ucapan &amp; Doa</h2>
+    <p class="teks">Tinggalkan doa dan ucapan hangat untuk kedua mempelai.</p>
+    <div class="daftar-ucapan" id="daftar-ucapan">
+      <article class="item-ucapan">
+        <strong>Keluarga Hartono</strong>
+        <p>Barakallahu laka wa baraka alaika wa jama'a bainakuma fii khair. Selamat menempuh hidup baru!</p>
+      </article>
+      <article class="item-ucapan">
+        <strong>Dina</strong>
+        <p>Happy wedding Raka &amp; Sinta! Lancar sampai hari H, bahagia selalu.</p>
+      </article>
+    </div>
+    <form id="form-ucapan">
+      <input type="text" name="nama" placeholder="Nama kamu" maxlength="40" required>
+      <textarea name="pesan" rows="3" placeholder="Tulis ucapan &amp; doa..." maxlength="220" required></textarea>
+      <button class="btn" type="submit">Kirim Ucapan</button>
+    </form>
+  </section>
+
+  <!-- ═══════════════ PENUTUP ═══════════════ -->
+  <footer class="bagian penutup">
+    <p class="teks">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua mempelai.</p>
+    <p class="label-emas">Wassalamu&rsquo;alaikum Wr. Wb.</p>
+    <p class="brand">Dibuat dengan &#10022; oleh <strong>Rancang Undangan</strong></p>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+
+<!-- Tombol musik melayang -->
+<button class="tombol-musik" id="tombol-musik" type="button" aria-pressed="false" aria-label="Nyalakan atau matikan musik pengiring">&#9834; <span>Musik: mati</span></button>
+</body>
+</html>

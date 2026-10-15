@@ -1,0 +1,346 @@
+/* ═══════════════════════════════════════════
+   RANCANG UNDANGAN — Template Pernikahan v1
+   Palet: hijau tua + emas + krem (elegan)
+   Mobile-first, lebar maks 480px (tampilan HP)
+   ═══════════════════════════════════════════ */
+
+:root {
+  --hijau: #234434;
+  --hijau-tua: #182e23;
+  --emas: #c19a5b;
+  --krem: #faf6ee;
+  --krem-gelap: #f1e9d8;
+  --tinta: #2b2b2b;
+  --abu: #7a7a7a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: #e8e2d4;
+  color: var(--tinta);
+  /* Kunci scroll sampai tamu menekan "Buka Undangan" */
+  overflow: hidden;
+}
+
+body.terbuka { overflow: auto; }
+
+/* ── COVER ─────────────────────────────── */
+.cover {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--krem);
+  /* Warna solid sebagai fondasi — kalau foto latar gagal dimuat,
+     isi di belakang cover TIDAK akan tembus terlihat */
+  background-color: var(--hijau-tua);
+  background-image:
+    linear-gradient(rgba(24, 46, 35, .72), rgba(24, 46, 35, .88)),
+    url('images/cover.jpg');
+  background-position: center;
+  background-size: cover;
+  transition: opacity .8s ease, visibility .8s;
+}
+
+.cover.tersembunyi { opacity: 0; visibility: hidden; }
+
+.cover-dalam { padding: 40px 32px; max-width: 480px; }
+
+.cover-label {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--emas);
+  margin-bottom: 18px;
+}
+
+.cover-nama {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.cover-nama .dan {
+  font-style: italic;
+  font-size: 34px;
+  color: var(--emas);
+  display: block;
+  margin: 4px 0;
+}
+
+.cover-tanggal {
+  letter-spacing: 2px;
+  font-size: 15px;
+  margin-bottom: 34px;
+  font-weight: 300;
+}
+
+.cover-tamu { margin-bottom: 30px; font-weight: 300; font-size: 15px; }
+.cover-tamu .nama-tamu {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin-top: 8px;
+  color: var(--emas);
+}
+
+/* ── KONTEN ────────────────────────────── */
+#konten {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--krem);
+  box-shadow: 0 0 40px rgba(0,0,0,.15);
+}
+
+.bagian { padding: 56px 32px; text-align: center; }
+
+.bagian-gelap { background: var(--hijau); color: var(--krem); }
+.bagian-gelap .teks { color: #d8d2c2; }
+
+.judul-bagian {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 30px;
+  margin-bottom: 26px;
+  color: var(--hijau);
+}
+
+.bagian-gelap .judul-bagian { color: var(--emas); }
+
+.judul-bagian::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 2px;
+  background: var(--emas);
+  margin: 14px auto 0;
+}
+
+.label-emas {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: var(--emas);
+  margin-bottom: 16px;
+}
+
+.teks { font-weight: 300; line-height: 1.8; font-size: 15px; }
+
+/* ── MEMPELAI ──────────────────────────── */
+.kartu-mempelai .foto {
+  width: 150px; height: 150px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--emas);
+  padding: 4px;
+  background: var(--krem);
+}
+
+.kartu-mempelai .foto img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+.kartu-mempelai h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--hijau);
+  margin-bottom: 8px;
+}
+
+.kartu-mempelai p { font-weight: 300; font-size: 14px; line-height: 1.7; color: var(--abu); }
+
+.dan-besar {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 40px;
+  color: var(--emas);
+  margin: 26px 0;
+}
+
+/* ── COUNTDOWN ─────────────────────────── */
+.tanggal-besar {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  margin-bottom: 24px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.countdown div {
+  background: rgba(193,154,91,.14);
+  border: 1px solid var(--emas);
+  border-radius: 12px;
+  width: 68px;
+  padding: 12px 0 10px;
+}
+
+.countdown span {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: var(--emas);
+}
+
+.countdown small { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #bdb49e; }
+
+/* ── ACARA ─────────────────────────────── */
+.kartu-acara {
+  background: #fff;
+  border: 1px solid var(--krem-gelap);
+  border-radius: 16px;
+  padding: 28px 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 18px rgba(35,68,52,.07);
+}
+
+.kartu-acara h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--hijau);
+  margin-bottom: 6px;
+}
+
+.kartu-acara .waktu { color: var(--emas); font-weight: 500; letter-spacing: 1px; margin-bottom: 10px; }
+.kartu-acara p:last-child { font-weight: 300; font-size: 14px; line-height: 1.7; color: var(--abu); }
+
+/* ── GALERI ────────────────────────────── */
+.grid-galeri {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.grid-galeri img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ── FORM ──────────────────────────────── */
+#form-rsvp input, #form-rsvp select, #form-rsvp textarea,
+#form-ucapan input, #form-ucapan textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(193,154,91,.4);
+  border-radius: 10px;
+  background: rgba(255,255,255,.06);
+  color: var(--krem);
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
+}
+
+#form-rsvp input::placeholder, #form-rsvp textarea::placeholder,
+#form-ucapan input::placeholder, #form-ucapan textarea::placeholder { color: #9a937f; }
+#form-rsvp select option { color: #222; }
+#form-rsvp textarea, #form-ucapan textarea { resize: vertical; }
+
+/* ── UCAPAN ────────────────────────────── */
+.daftar-ucapan { margin: 26px 0 8px; text-align: left; }
+
+.item-ucapan { padding: 16px 2px; border-top: 1px solid rgba(193,154,91,.3); }
+.item-ucapan:last-child { border-bottom: 1px solid rgba(193,154,91,.3); }
+
+.item-ucapan strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  color: var(--emas);
+  margin-bottom: 4px;
+}
+
+.item-ucapan p { font-weight: 300; font-size: 14px; line-height: 1.7; color: #d8d2c2; }
+
+/* ── TOMBOL MUSIK MELAYANG ─────────────── */
+.tombol-musik {
+  position: fixed;
+  z-index: 40;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  border-radius: 999px;
+  padding: 11px 16px;
+  background: var(--hijau);
+  color: var(--krem);
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .5px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+
+.tombol-musik[aria-pressed="false"] {
+  background: var(--krem);
+  color: var(--hijau);
+  border: 1px solid var(--krem-gelap);
+}
+
+/* ── AMPLOP ────────────────────────────── */
+.kartu-rek {
+  background: #fff;
+  border: 1px solid var(--krem-gelap);
+  border-radius: 16px;
+  padding: 24px 20px;
+  margin-top: 18px;
+  box-shadow: 0 4px 18px rgba(35,68,52,.07);
+}
+
+.kartu-rek p { font-weight: 300; font-size: 14px; line-height: 1.8; margin-bottom: 14px; }
+.kartu-rek .norek { font-size: 19px; letter-spacing: 2px; font-weight: 500; color: var(--hijau); }
+
+/* ── TOMBOL ────────────────────────────── */
+.btn {
+  display: inline-block;
+  background: var(--emas);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 15px 38px;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 6px 20px rgba(193,154,91,.35);
+}
+
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(193,154,91,.45); }
+
+.btn-kecil { font-size: 13px; padding: 10px 26px; }
+
+.btn-garis {
+  background: transparent;
+  border: 1px solid var(--emas);
+  color: var(--emas);
+  box-shadow: none;
+}
+
+/* ── PENUTUP ───────────────────────────── */
+.penutup .brand {
+  margin-top: 34px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--abu);
+  font-weight: 300;
+}
+
+.penutup .brand strong { color: var(--hijau); font-weight: 500; }
