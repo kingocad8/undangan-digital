@@ -1,41 +1,57 @@
-# Undangan Digital — Template Pernikahan v1
+# Undangan Digital — Template Pernikahan v2
 
 Template undangan pernikahan digital satu halaman, mobile-first. Dibuat untuk **Rancang Undangan**.
 
-## Isi template
+## Isi template (v2)
 
-- Cover dengan tombol "Buka Undangan" (scroll dikunci sampai dibuka)
+- Cover dengan tombol "Buka Undangan" (scroll dikunci sampai dibuka) + nama tamu personal via `?to=`
 - Profil kedua mempelai
 - Hitung mundur (countdown) otomatis + tombol "Simpan Tanggal" (Google Calendar)
-- Rangkaian acara (Akad & Resepsi) + tombol Google Maps
-- Galeri foto
-- Formulir RSVP → terkirim sebagai pesan WhatsApp
-- Kolom Ucapan & Doa → ucapan tamu langsung tampil di halaman (mode sampel: tampil selama halaman dibuka)
-- Musik pengiring → menyala otomatis saat undangan dibuka, bisa dimatikan lewat tombol melayang (dibangkitkan via WebAudio, tanpa file MP3)
+- Rangkaian acara (Akad & Resepsi) + **peta embed Google Maps** (opsional) + tombol Maps
+- Galeri foto → **ketuk untuk tampil penuh (lightbox) + slideshow otomatis**
+- Formulir RSVP → terkirim sebagai pesan WhatsApp ke nomor klien
+- Kolom Ucapan & Doa → **tersimpan permanen via Google Sheets** (opsional, gratis); tanpa setup = mode sampel
+- **Musik pengiring MP3** (file `music.mp3` dari klien) → otomatis nyala saat dibuka, bisa dimatikan; tanpa file = nada bawaan
 - Amplop digital (nomor rekening + tombol salin)
 
 ## Link personal per tamu (?to=)
 
 Template membaca `?to=` dari URL dan menampilkan namanya di cover.
-Contoh: `https://domainkamu/budi-sinta?to=Bapak%20Hartono`
-→ cover menampilkan "Bapak Hartono". Tanpa parameter, tampil "Tamu Undangan".
+
+Contoh: `https://domainkamu/budi-sinta?to=Bapak%20Hartono` → cover menampilkan "Bapak Hartono". Tanpa parameter, tampil "Tamu Undangan".
+
 Aman dari injeksi kode via URL (nama disisipkan sebagai teks polos).
 
-## Cara pakai untuk klien baru
+## Cara pakai untuk klien baru — CUKUP ISI 1 BLOK
 
-1. **Nama, tanggal, alamat** → edit di `index.html` (cari teks yang mau diganti).
-2. **Foto** → ganti file di folder `images/` dengan foto asli klien (nama file boleh sama biar nggak perlu edit HTML, atau edit `src` di `index.html`). Foto bawaan template ini hanya contoh.
-3. **Nomor WhatsApp RSVP** → ganti `NOMOR_WA` di `script.js`.
-4. **Tanggal countdown** → ganti `TANGGAL_ACARA` di `script.js`.
-5. **Warna** → ganti variabel di `:root` pada `style.css` (`--hijau`, `--emas`, `--krem`).
+Buka `script.js`, isi blok `const KONFIG = {...}` di paling atas:
+
+| Field | Diisi apa |
+|---|---|
+| `TANGGAL_ACARA` | `"2026-12-19T08:00:00+07:00"` |
+| `NOMOR_WA` | `"6281234567890"` (format 62, tanpa +/spasi) |
+| `MAPS_QUERY` | `"Gedung Serbaguna Batu Aji, Batam"` |
+| `MAPS_EMBED_URL` | Link dari Google Maps → Bagikan → "Sematkan peta" → salin isi `src="..."`; `""` = tidak tampilkan peta |
+| `MUSIK_MP3` | `"music.mp3"` (taruh file di folder ini); `""` = nada bawaan |
+| `WISHES_API_URL` | URL Web App Apps Script (lihat `apps-script/Code.gs`); `""` = mode sampel |
+| `SLIDESHOW_MS` | `5000` (biarkan) |
+
+Teks lain (nama, venue, rekening) → cari & ganti langsung di `index.html`.
+Foto → timpa file di `images/` dengan nama yang sama (kompres < 300KB/foto).
 
 ## File
 
 | File | Isi |
 |---|---|
 | `index.html` | Struktur & teks undangan |
-| `style.css` | Tampilan (warna, font, layout) |
-| `script.js` | Countdown, RSVP via WA, tombol salin, nama tamu ?to=, musik, kolom ucapan |
-| `images/` | Foto contoh (cover, mempelai, galeri) — ganti dengan foto klien |
+| `style.css` | Tampilan (warna, font, layout, lightbox) |
+| `script.js` | Seluruh logika + 1 blok KONFIG |
+| `images/` | Foto contoh — ganti dengan foto klien |
+| `music.mp3` | (opsional) Lagu pilihan klien |
+| `apps-script/Code.gs` | Backend ucapan permanen (Google Sheets, gratis) |
+| `SOP-FULFILLMENT.md` | Panduan operasional per order (tanpa coding) |
+| `template-pernikahan-v2.zip` | Paket siap download untuk fulfillment manual |
 
-Tidak butuh server / database — cukup hosting file statis (Vercel, Netlify, GitHub Pages).
+## Alur kerja
+
+Edit/push ke GitHub → Vercel otomatis deploy → website update. Lihat `SOP-FULFILLMENT.md` untuk operasional harian.

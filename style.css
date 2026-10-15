@@ -344,3 +344,81 @@ body.terbuka { overflow: auto; }
 }
 
 .penutup .brand strong { color: var(--hijau); font-weight: 500; }
+
+/* ── PETA (embed Google Maps, opsional) ── */
+.peta:empty { display: none; }
+
+.peta iframe {
+  width: 100%;
+  height: 260px;
+  border: 0;
+  border-radius: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 18px rgba(35,68,52,.07);
+}
+
+/* ── LIGHTBOX GALERI ───────────────────── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 20, 16, .92);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility .3s;
+}
+
+.lightbox.buka { opacity: 1; visibility: visible; }
+
+.lb-gambar {
+  max-width: 92vw;
+  max-height: 78vh;
+  border-radius: 10px;
+  box-shadow: 0 12px 48px rgba(0,0,0,.5);
+  object-fit: contain;
+}
+
+.lb-tutup {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 44px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 6px 12px;
+}
+
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(255,255,255,.14);
+  color: #fff;
+  font-size: 38px;
+  line-height: 1;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.lb-kiri { left: 12px; }
+.lb-kanan { right: 12px; }
+
+.lb-hint {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgba(255,255,255,.65);
+  font-size: 13px;
+  letter-spacing: .5px;
+}

@@ -77,7 +77,8 @@
       <p class="waktu">11.00 &mdash; 13.00 WIB</p>
       <p>Gedung Serbaguna Batu Aji<br>Jl. Raya Batu Aji No. 123, Batam</p>
     </div>
-    <a class="btn" target="_blank" rel="noopener" href="https://maps.google.com/?q=Batu+Aji,+Batam">Lihat Google Maps</a>
+    <div class="peta" id="peta"></div>
+    <a class="btn" id="btn-maps" target="_blank" rel="noopener" href="https://maps.google.com/?q=Batu+Aji,+Batam">Lihat Google Maps</a>
   </section>
 
   <!-- ═══════════════ GALERI ═══════════════ -->
@@ -155,5 +156,14 @@
 
 <!-- Tombol musik melayang -->
 <button class="tombol-musik" id="tombol-musik" type="button" aria-pressed="false" aria-label="Nyalakan atau matikan musik pengiring">&#9834; <span>Musik: mati</span></button>
+
+<!-- Lightbox galeri: ketuk foto untuk tampil penuh + slideshow otomatis -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-tutup" id="lb-tutup" type="button" aria-label="Tutup galeri">&times;</button>
+  <button class="lb-nav lb-kiri" id="lb-kiri" type="button" aria-label="Foto sebelumnya">&#8249;</button>
+  <img class="lb-gambar" id="lb-gambar" alt="Foto galeri">
+  <button class="lb-nav lb-kanan" id="lb-kanan" type="button" aria-label="Foto berikutnya">&#8250;</button>
+  <p class="lb-hint">Geser otomatis &middot; ketuk &times; untuk tutup</p>
+</div>
 </body>
 </html>
